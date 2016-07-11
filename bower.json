@@ -1,0 +1,25 @@
+{
+  "name": "branch",
+  "version": "0.0.0",
+  "main": "branch.js",
+  "homepage": "https://github.com/volkovasystems/branch",
+  "authors": [
+    "Richeve S. Bebedor <richeve.bebedor@gmail.com>"
+  ],
+  "description": "Create bars.",
+  "keywords": [
+    "bar",
+    "branch"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "harden": "^0.3.2"
+  }
+}
