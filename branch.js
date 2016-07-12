@@ -457,6 +457,11 @@ harden( "resolveGroup",
 			{
 				branch.group[ group ][ lastIndex ] = branch.group[ group ][ groupIndex ];
 				branch.group[ group ][ groupIndex ] = null;
+
+				var _bar = branch.group[ group ][ lastIndex ];
+				_bar.setAttribute( "index", lastIndex );
+				_bar.setAttribute( "level", lastIndex );
+				_bar.style.zIndex = lastIndex;
 			}
 		}
 
@@ -515,11 +520,6 @@ harden( "cascade",
 	function cascade( group ){
 		group = group || "root";
 
-		var view = document.querySelector( "section.view." + group );
-		if( !view ){
-			throw new Error( "view does not exists" );
-		}
-
 		if( !branch.data.group[ group ] ){
 			console.debug( "cannot find group", group );
 
@@ -538,8 +538,7 @@ harden( "cascade",
 				bar.setAttribute( "level", index );
 				bar.setAttribute( "index", index );
 
-				var viewLevel = parseInt( view.getAttribute( "level" ) );
-				bar.style.zIndex = viewLevel * index;
+				bar.style.zIndex = index;
 			} );
 
 		return branch;
